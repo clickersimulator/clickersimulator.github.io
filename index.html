@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Collection Index</title>
+    <title>Pet Catalog Index</title>
     <style>
         :root {
             --bg-color: #0c0d10;
@@ -161,107 +161,196 @@
 
     <script>
         const petsData = [
-            { id: "Chocolate", name: "Chocolate", iconId: "88579842245566" },
+            { id: "Robot", name: "Robot", iconId: "90921981760627" },
+            { id: "BlueDragon", name: "Blue Dragon", iconId: "81517759035540" },
+            { id: "PetStack", name: "Pet Stack", iconId: "93856946694401" },
             { id: "MoltenSlime", name: "Molten Slime", iconId: "101193237026541" },
-            { id: "Tiger", name: "Tiger", iconId: "95596298936664" },
-            { id: "CherubisBloom", name: "Cherubis Bloom", iconId: "124617723377564" },
-            { id: "TheOverlord", name: "The Overlord", iconId: "97919633977640" },
+            { id: "Solflare", name: "Solflare", iconId: "92367578059457" },
+            { id: "GalacticSeraph", name: "Seraph", iconId: "89893642524349" },
             { id: "ReversedDog", name: "Reversed Dog", iconId: "117279998342366" },
             { id: "RedSeahorse", name: "Red Seahorse", iconId: "107005491414695" },
-            { id: "BlackBear", name: "Black Bear", iconId: "100849484124283" },
             { id: "DiscoBall", name: "Disco Ball", iconId: "126155707363304" },
             { id: "Kitsune", name: "Kitsune", iconId: "130514860854088" },
             { id: "Zebra", name: "Zebra", iconId: "110421432076873" },
-            { id: "PurpleJellyfish", name: "Purple Jellyfish", iconId: "106815127190613" },
-            { id: "ChestMimicInABucket", name: "Chest Mimic In A Bucket", iconId: "122308136266050" },
-            { id: "Crab", name: "Crab", iconId: "106101390579826" },
-            { id: "ChocolateIceCream", name: "Chocolate Ice Cream", iconId: "103695890628134" },
+            { id: "Bunny", name: "Bunny", iconId: "104763135259770" },
+            { id: "RedDominus", name: "Red Dominus", iconId: "80668814104411" },
+            { id: "Alien", name: "Alien", iconId: "102018852402245" },
+            { id: "BlueGift", name: "Blue Gift", iconId: "113085357548330" },
             { id: "CatInABucket", name: "Cat In A Bucket", iconId: "110017610202834" },
             { id: "Deer", name: "Deer", iconId: "102567070166623" },
-            { id: "IceCream", name: "Ice Cream", iconId: "123120221719628" },
+            { id: "BlackHydominus", name: "Black Hydominus", iconId: "107558291664947" },
             { id: "ReversedCat", name: "Reversed Cat", iconId: "73922675494304" },
-            { id: "Unicorn", name: "Unicorn", iconId: "94950279525592" },
-            { id: "Monkey", name: "Monkey", iconId: "76566737639052" },
-            { id: "PartyCogmower", name: "Party Cogmower", iconId: "111691424014620" },
+            { id: "OrangeWizard", name: "Orange Wizard", iconId: "109647125680437" },
+            { id: "Gorilla", name: "Gorilla", iconId: "111732465618458" },
             { id: "Squirrel", name: "Squirrel", iconId: "75141867203901" },
-            { id: "MagmaCube", name: "Magma Cube", iconId: "72364434873752" },
-            { id: "Hellwing", name: "Hellwing", iconId: "137075188552606" },
-            { id: "Wolf", name: "Wolf", iconId: "138215752939932" },
-            { id: "BlueJellyfish", name: "Blue Jellyfish", iconId: "88318732629648" },
-            { id: "Acorn", name: "Acorn", iconId: "121864183808487" },
+            { id: "AngDev", name: "Angel & Devil", iconId: "114593019451267" },
+            { id: "GreenBlock", name: "Green Block", iconId: "140024145482936" },
+            { id: "BubbleGum", name: "Bubble Gum", iconId: "84348209283744" },
             { id: "Cupcake", name: "Cupcake", iconId: "128905816444157" },
             { id: "Goat", name: "Goat", iconId: "100840643293388" },
-            { id: "Bee", name: "Bee", iconId: "75437677377369" },
-            { id: "Raccoon", name: "Raccoon", iconId: "133670805606540" },
+            { id: "PinkDragon", name: "Pink Dragon", iconId: "115514672741245" },
+            { id: "EternalTrophy", name: "Eternal Trophy", iconId: "81386110522812" },
+            { id: "Roblox", name: "Roblox", iconId: "101435092552649" },
             { id: "YellowSeahorse", name: "Yellow Seahorse", iconId: "107722451853461" },
-            { id: "Pufferfish", name: "Pufferfish", iconId: "102535973943066" },
-            { id: "BubbleGum", name: "Bubble Gum", iconId: "84348209283744" },
-            { id: "Cookieman", name: "Cookieman", iconId: "113484920991712" },
-            { id: "Equalizer", name: "Equalizer", iconId: "101667041174340" },
+            { id: "EmberChampion", name: "Ember Champion", iconId: "112778131650646" },
+            { id: "Tanuki", name: "Tanuki", iconId: "124299252102658" },
+            { id: "CrimsonShard", name: "Crimson Shard", iconId: "125620321891300" },
+            { id: "PolarBear", name: "Polar Bear", iconId: "92922411418772" },
             { id: "Snake", name: "Snake", iconId: "123785830108382" },
-            { id: "ChestMimic", name: "Chest Mimic", iconId: "92749426462005" },
-            { id: "Elephant", name: "Elephant", iconId: "127429039913734" },
-            { id: "Skier", name: "Skier", iconId: "133308426943862" },
-            { id: "Giraffe", name: "Giraffe", iconId: "124786611820303" },
-            { id: "Owl", name: "Owl", iconId: "107483178343791" },
+            { id: "PurpleWizard", name: "Purple Wizard", iconId: "73708275676081" },
             { id: "Ktulhu", name: "Ktulhu", iconId: "111184864451932" },
-            { id: "Cactus", name: "Cactus", iconId: "127314117919964" },
-            { id: "Cheetah", name: "Cheetah", iconId: "72914760626794" },
             { id: "Penguin", name: "Penguin", iconId: "107610673949818" },
-            { id: "Bull", name: "Bull", iconId: "105852961774706" },
-            { id: "Yeti", name: "Yeti", iconId: "95091967341491" },
+            { id: "GoldFish", name: "Gold Fish", iconId: "86590960041962" },
             { id: "AureliteHalo", name: "Aurelite Halo", iconId: "70982658481418" },
             { id: "Starforge", name: "Starforge", iconId: "76782769566021" },
             { id: "Slime", name: "Slime", iconId: "89345627737735" },
-            { id: "Lion", name: "Lion", iconId: "126606000761880" },
-            { id: "Mouse", name: "Mouse", iconId: "72274074632743" },
-            { id: "Snowman", name: "Snowman", iconId: "93654987601779" },
-            { id: "Candy", name: "Candy", iconId: "95584489425177" },
-            { id: "CandyDominus", name: "Candy Dominus", iconId: "82795329520323" },
+            { id: "Script", name: "Script", iconId: "77227649509200" },
+            { id: "Bear", name: "Bear", iconId: "130466798991896" },
             { id: "HellfireBat", name: "Hellfire Bat", iconId: "102029048545841" },
-            { id: "SummerDog", name: "Summer Dog", iconId: "139895329802162" },
-            { id: "Fox", name: "Fox", iconId: "88839098262704" },
-            { id: "SakuraTurtle", name: "Sakura Turtle", iconId: "115616671857870" },
-            { id: "Turtle", name: "Turtle", iconId: "125290338866815" },
-            { id: "Poseidon", name: "Poseidon", iconId: "98743994253100" },
-            { id: "Tanuki", name: "Tanuki", iconId: "124299252102658" },
+            { id: "OrangeBlock", name: "Orange Block", iconId: "109885680667646" },
+            { id: "Firecrackers", name: "Firecrackers", iconId: "117145721492981" },
+            { id: "Pig", name: "Pig", iconId: "77488028236584" },
+            { id: "RedBalloon", name: "Red Balloon", iconId: "85089096287772" },
             { id: "Strawberry", name: "Strawberry", iconId: "124916911644687" },
             { id: "GodlyGem", name: "Godly Gem", iconId: "114654108504631" },
-            { id: "Pig", name: "Pig", iconId: "77488028236584" },
-            { id: "Shark", name: "Shark", iconId: "86472498546769" },
-            { id: "Shell", name: "Shell", iconId: "124964487894708" },
-            { id: "Calf", name: "Calf", iconId: "97812410796433" },
-            { id: "SummerCat", name: "Summer Cat", iconId: "128065489833609" },
-            { id: "Duck", name: "Duck", iconId: "74730912211465" },
+            { id: "RedBlock", name: "Red Block", iconId: "72703734678126" },
+            { id: "OrangeDominus", name: "Orange Dominus", iconId: "125028968714403" },
+            { id: "1MClick", name: "1M Click", iconId: "115221256771440" },
             { id: "CoreGuardian", name: "Core Guardian", iconId: "98064774940672" },
-            { id: "Cow", name: "Cow", iconId: "116193935880630" },
-            { id: "GoldFish", name: "Gold Fish", iconId: "86590960041962" },
+            { id: "ShatteredShard", name: "Shattered Shard", iconId: "79508552582319" },
             { id: "Ophanim", name: "Ophanim", iconId: "99580393209518" },
-            { id: "DogInABucket", name: "Dog In A Bucket", iconId: "96478946438068" },
-            { id: "Fish", name: "Fish", iconId: "105943860706214" },
-            { id: "Kraken", name: "Kraken", iconId: "87878967180615" },
-            { id: "Cat", name: "Cat", iconId: "90402349428850" },
-            { id: "StarFish", name: "Star Fish", iconId: "80877936356719" },
-            { id: "Swimmer", name: "Swimmer", iconId: "121290263315258" },
-            { id: "Frog", name: "Frog", iconId: "84586002155513" },
-            { id: "Dog", name: "Dog", iconId: "84816537610420" },
-            { id: "Bunny", name: "Bunny", iconId: "104763135259770" },
+            { id: "Calf", name: "Calf", iconId: "97812410796433" },
             { id: "PetalMoth", name: "Petal Moth", iconId: "129488213450565" },
-            { id: "TurtleInABucket", name: "Turtle In A Bucket", iconId: "126004551645658" },
-            { id: "Spider", name: "Spider", iconId: "79349989622603" },
-            { id: "Cowboy", name: "Cowboy", iconId: "103727699693840" },
-            { id: "Bear", name: "Bear", iconId: "130466798991896" },
-            { id: "BlackCat", name: "Black Cat", iconId: "81156479883478" },
+            { id: "500KOverlord", name: "500K Overlord", iconId: "132771239528746" },
             { id: "Seal", name: "Seal", iconId: "112684814892826" },
-            { id: "Boombox", name: "Boombox", iconId: "86349572042892" },
-            { id: "Camel", name: "Camel", iconId: "104897716469948" },
-            { id: "Poly", name: "Poly", iconId: "72700884296344" },
-            { id: "CandyGun", name: "Candy Gun", iconId: "77766252091625" },
-            { id: "LotusSerpent", name: "Lotus Serpent", iconId: "132051694605745" },
-            { id: "Gorilla", name: "Gorilla", iconId: "111732465618458" },
+            { id: "CrimsonStar", name: "Crimson Star", iconId: "99572044860982" },
+            { id: "Giraffe", name: "Giraffe", iconId: "124786611820303" },
             { id: "Phoenix", name: "Phoenix", iconId: "124071335203484" },
+            { id: "BlueBalloon", name: "Blue Balloon", iconId: "117248431989127" },
+            { id: "PinkBunny", name: "Pink Bunny", iconId: "74463526975864" },
+            { id: "WhiteDominus", name: "White Dominus", iconId: "107439658168566" },
+            { id: "BlueDominus", name: "Blue Dominus", iconId: "111668931793453" },
+            { id: "Panda", name: "Panda", iconId: "101148954705786" },
+            { id: "RobloxStudio", name: "Roblox Studio", iconId: "84472611126348" },
+            { id: "RedWizard", name: "Red Wizard", iconId: "137646880451109" },
+            { id: "YellowDragon", name: "Yellow Dragon", iconId: "84301727840608" },
+            { id: "RobloxBacon", name: "Roblox Bacon", iconId: "114251241901992" },
+            { id: "TheOverlord", name: "The Overlord", iconId: "97919633977640" },
+            { id: "RoyalTrophy", name: "Royal Trophy", iconId: "86641601932786" },
+            { id: "BloxyAward", name: "Bloxy Award", iconId: "102756358682783" },
+            { id: "CandyDominus", name: "Candy Dominus", iconId: "82795329520323" },
+            { id: "BlackBear", name: "Black Bear", iconId: "100849484124283" },
+            { id: "Monkey", name: "Monkey", iconId: "76566737639052" },
+            { id: "LotusSerpent", name: "Lotus Serpent", iconId: "132051694605745" },
+            { id: "Astronaut", name: "Astronaut", iconId: "78300643458253" },
+            { id: "EternalShard", name: "Eternal Shard", iconId: "74219807991706" },
+            { id: "DogInABucket", name: "Dog In A Bucket", iconId: "96478946438068" },
+            { id: "Crab", name: "Crab", iconId: "106101390579826" },
+            { id: "Diamond", name: "Diamond", iconId: "75274272264639" },
+            { id: "ChestMimicInABucket", name: "Chest Mimic In A Bucket", iconId: "122308136266050" },
+            { id: "Chest", name: "Chest", iconId: "76001967586699" },
+            { id: "BlueJellyfish", name: "Blue Jellyfish", iconId: "88318732629648" },
+            { id: "Potion", name: "Potion", iconId: "104282855426601" },
+            { id: "CherubisBloom", name: "Cherubis Bloom", iconId: "124617723377564" },
+            { id: "ChocolateIceCream", name: "Chocolate Ice Cream", iconId: "103695890628134" },
+            { id: "Mouse", name: "Mouse", iconId: "72274074632743" },
+            { id: "RedGift", name: "Red Gift", iconId: "83024215739441" },
+            { id: "IceCream", name: "Ice Cream", iconId: "123120221719628" },
+            { id: "Acorn", name: "Acorn", iconId: "121864183808487" },
+            { id: "Unicorn", name: "Unicorn", iconId: "94950279525592" },
+            { id: "SummerCat", name: "Summer Cat", iconId: "128065489833609" },
+            { id: "TheClickerTrophy", name: "The Clicker Trophy", iconId: "112276519898429" },
+            { id: "Raccoon", name: "Raccoon", iconId: "133670805606540" },
+            { id: "PartyCogmower", name: "Party Cogmower", iconId: "111691424014620" },
+            { id: "Frog", name: "Frog", iconId: "84586002155513" },
+            { id: "MagmaCube", name: "Magma Cube", iconId: "72364434873752" },
+            { id: "Earth", name: "Earth", iconId: "70394668092797" },
+            { id: "PurpleJellyfish", name: "Purple Jellyfish", iconId: "106815127190613" },
+            { id: "CandyGun", name: "Candy Gun", iconId: "77766252091625" },
+            { id: "Hellwing", name: "Hellwing", iconId: "137075188552606" },
+            { id: "FrozenEyeCube", name: "Frozen Eye Cube", iconId: "92833074103894" },
+            { id: "Wolf", name: "Wolf", iconId: "138215752939932" },
+            { id: "Pumpkin", name: "Pumpkin", iconId: "122210713243779" },
+            { id: "ChestMimic", name: "Chest Mimic", iconId: "92749426462005" },
+            { id: "Chicken", name: "Chicken", iconId: "70802139790796" },
+            { id: "SummerDog", name: "Summer Dog", iconId: "139895329802162" },
+            { id: "Police", name: "Police", iconId: "137503678494869" },
+            { id: "EternalStar", name: "Eternal Star", iconId: "107559476222602" },
+            { id: "AllSeeingGuardian", name: "All Seeing Guardian", iconId: "99957352792320" },
+            { id: "StarFish", name: "Star Fish", iconId: "80877936356719" },
+            { id: "PurpleBlock", name: "Purple Block", iconId: "85197430643721" },
+            { id: "ClickerTetraCube", name: "Clicker Tetra Cube", iconId: "89055073709988" },
             { id: "HolyEgg", name: "Holy Egg", iconId: "93430094725986" },
-            { id: "PolarBear", name: "Polar Bear", iconId: "92922411418772" }
+            { id: "Zombie", name: "Zombie", iconId: "96637012052035" },
+            { id: "Yeti", name: "Yeti", iconId: "95091967341491" },
+            { id: "BlueBlock", name: "Blue Block", iconId: "106447954275307" },
+            { id: "Pufferfish", name: "Pufferfish", iconId: "102535973943066" },
+            { id: "Candy", name: "Candy", iconId: "95584489425177" },
+            { id: "Ufo", name: "UFO", iconId: "90296427751412" },
+            { id: "Cowboy", name: "Cowboy", iconId: "103727699693840" },
+            { id: "Turtle", name: "Turtle", iconId: "125290338866815" },
+            { id: "BlueHydominus", name: "Blue Hydominus", iconId: "135125767670624" },
+            { id: "Tiger", name: "Tiger", iconId: "95596298936664" },
+            { id: "GreenDragon", name: "Green Dragon", iconId: "102599896021116" },
+            { id: "Embercrest", name: "Embercrest", iconId: "129002926817711" },
+            { id: "Owl", name: "Owl", iconId: "107483178343791" },
+            { id: "Magma", name: "Magma", iconId: "136339404560615" },
+            { id: "VaultKeeper", name: "Vault Keeper", iconId: "74028640057380" },
+            { id: "StarlingSprite", name: "Starling Sprite", iconId: "76003912000017" },
+            { id: "1MRebirth", name: "1M Rebirth", iconId: "99619770545365" },
+            { id: "Bull", name: "Bull", iconId: "105852961774706" },
+            { id: "Spider", name: "Spider", iconId: "79349989622603" },
+            { id: "Snowman", name: "Snowman", iconId: "93654987601779" },
+            { id: "RedHydominus", name: "Red Hydominus", iconId: "87628019936527" },
+            { id: "GiantHolyEgg", name: "Giant Holy Egg", iconId: "117640275356556" },
+            { id: "Lion", name: "Lion", iconId: "126606000761880" },
+            { id: "Chocolate", name: "Chocolate", iconId: "88579842245566" },
+            { id: "Overseer", name: "Overseer", iconId: "118501325471758" },
+            { id: "Cow", name: "Cow", iconId: "116193935880630" },
+            { id: "Elephant", name: "Elephant", iconId: "127429039913734" },
+            { id: "SakuraTurtle", name: "Sakura Turtle", iconId: "115616671857870" },
+            { id: "Camel", name: "Camel", iconId: "104897716469948" },
+            { id: "Equalizer", name: "Equalizer", iconId: "101667041174340" },
+            { id: "SeaSerpent", name: "Sea Serpent", iconId: "71536090153177" },
+            { id: "Shark", name: "Shark", iconId: "86472498546769" },
+            { id: "Dog", name: "Dog", iconId: "84816537610420" },
+            { id: "BlackDominus", name: "Black Dominus", iconId: "111130354166220" },
+            { id: "Rocket", name: "Rocket", iconId: "128841860819708" },
+            { id: "AngelPotion", name: "Angel", iconId: "79850263086584" },
+            { id: "NebulaWyvern", name: "Nebula Wyvern", iconId: "99259889017315" },
+            { id: "DeveloperHammer", name: "Developer Hammer", iconId: "125946183048408" },
+            { id: "Shell", name: "Shell", iconId: "124964487894708" },
+            { id: "BlueWizard", name: "Blue Wizard", iconId: "81453031678253" },
+            { id: "OrangeHydominus", name: "Orange Hydominus", iconId: "123278674791479" },
+            { id: "Duck", name: "Duck", iconId: "74730912211465" },
+            { id: "Fox", name: "Fox", iconId: "88839098262704" },
+            { id: "RedDragon", name: "Red Dragon", iconId: "81150664129187" },
+            { id: "Apex", name: "Apex", iconId: "130353018367033" },
+            { id: "Swimmer", name: "Swimmer", iconId: "121290263315258" },
+            { id: "TinyFirecracker", name: "Tiny Firecracker", iconId: "99747734877621" },
+            { id: "Fish", name: "Fish", iconId: "105943860706214" },
+            { id: "1MStar", name: "1M Star", iconId: "91670232287122" },
+            { id: "Cat", name: "Cat", iconId: "90402349428850" },
+            { id: "Bee", name: "Bee", iconId: "75437677377369" },
+            { id: "Midas", name: "Midas", iconId: "135557691575268" },
+            { id: "Shard", name: "Shard", iconId: "84730751363511" },
+            { id: "WhiteHydominus", name: "White Hydominus", iconId: "91299199083695" },
+            { id: "Poseidon", name: "Poseidon", iconId: "98743994253100" },
+            { id: "Cookieman", name: "Cookieman", iconId: "113484920991712" },
+            { id: "TurtleInABucket", name: "Turtle In A Bucket", iconId: "126004551645658" },
+            { id: "CosmicCrawler", name: "Cosmic Crawler", iconId: "117395128818620" },
+            { id: "CataclysmDragon", name: "Cataclysm Dragon", iconId: "95908721514885" },
+            { id: "Cheetah", name: "Cheetah", iconId: "72914760626794" },
+            { id: "BlackCat", name: "Black Cat", iconId: "81156479883478" },
+            { id: "Skier", name: "Skier", iconId: "133308426943862" },
+            { id: "Boombox", name: "Boombox", iconId: "86349572042892" },
+            { id: "Message", name: "Message", iconId: "132709839754006" },
+            { id: "Poly", name: "Poly", iconId: "72700884296344" },
+            { id: "Cactus", name: "Cactus", iconId: "127314117919964" },
+            { id: "CrimsonTrophy", name: "Crimson Trophy", iconId: "128185973881910" },
+            { id: "Abyss", name: "Abyss", iconId: "114046874757017" },
+            { id: "Kraken", name: "Kraken", iconId: "87878967180615" },
+            { id: "GreenWizard", name: "Green Wizard", iconId: "98702917279600" }
         ];
 
         document.getElementById('counterBadge').textContent = `Total Pets: ${petsData.length}`;
@@ -271,13 +360,11 @@
         petsData.forEach((pet, index) => {
             const card = document.createElement('div');
             card.className = 'card';
-            card.style.animationDelay = `${Math.min(index * 0.03, 1.2)}s`;
+            card.style.animationDelay = `${Math.min(index * 0.02, 1.2)}s`;
             
-            const imgUrl = `https://thumbnails.roblox.com/v1/assets?assetIds=${pet.iconId}&returnPolicy=2&size=150x150&format=Png&isCircular=false`;
-
             card.innerHTML = `
                 <div class="icon-container">
-                    <img alt="${pet.name}" loading="lazy" data-assetid="${pet.iconId}">
+                    <img alt="${pet.name}" loading="lazy">
                 </div>
                 <div class="pet-name">${pet.name}</div>
                 <div class="pet-id">${pet.id}</div>
@@ -285,19 +372,22 @@
             
             const img = card.querySelector('img');
             
-            // Fetch thumbnail dynamically through Roblox API endpoint via JSONP/CORS workaround
-            fetch(`https://thumbnails.roblox.com/v1/assets?assetIds=${pet.iconId}&returnPolicy=2&size=150x150&format=Png&isCircular=false`)
-                .then(response => response.json())
-                .then(data => {
-                    if (data && data.data && data.data[0] && data.data[0].imageUrl) {
-                        img.src = data.data[0].imageUrl;
-                    } else {
+            if (pet.iconId && pet.iconId !== "") {
+                fetch(`https://thumbnails.roblox.com/v1/assets?assetIds=${pet.iconId}&returnPolicy=2&size=150x150&format=Png&isCircular=false`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data && data.data && data.data[0] && data.data[0].imageUrl) {
+                            img.src = data.data[0].imageUrl;
+                        } else {
+                            img.src = `https://www.roblox.com/asset-thumbnail/image?assetId=${pet.iconId}&width=150&height=150&format=png`;
+                        }
+                    })
+                    .catch(() => {
                         img.src = `https://www.roblox.com/asset-thumbnail/image?assetId=${pet.iconId}&width=150&height=150&format=png`;
-                    }
-                })
-                .catch(() => {
-                    img.src = `https://www.roblox.com/asset-thumbnail/image?assetId=${pet.iconId}&width=150&height=150&format=png`;
-                });
+                    });
+            } else {
+                img.src = "";
+            }
 
             grid.appendChild(card);
         });
