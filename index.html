@@ -196,6 +196,15 @@ main{padding:30px 20px 90px;max-width:1400px;margin:0 auto;}
 .modal .tags{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-bottom:14px;}
 .tag-pill{font-size:.66rem;font-weight:700;padding:4px 10px;border-radius:999px;text-transform:uppercase;letter-spacing:.04em;border:1px solid;}
 .modal-desc{text-align:center;color:var(--muted-2);font-size:.82rem;margin-bottom:16px;min-height:16px;}
+ 
+.welcome-modal{max-width:420px;padding:32px 28px 26px;text-align:center;}
+.welcome-title{font-size:1.3rem;margin:4px 0 14px;color:#fff;line-height:1.3;}
+.welcome-text{font-size:.88rem;line-height:1.6;color:var(--muted);margin:0 0 22px;}
+.welcome-ok{
+  padding:10px 24px;border-radius:10px;border:1px solid #fff;background:#fff;color:#000;
+  font-size:.85rem;font-weight:700;cursor:pointer;transition:opacity .2s;
+}
+.welcome-ok:hover{opacity:.85;}
 .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px;}
 .stat-box{background:#0f0f0f;border:1px solid var(--border);border-radius:12px;padding:11px 8px;text-align:center;}
 .stat-box .val{font-size:1.1rem;font-weight:800;color:#fff;}
@@ -263,6 +272,15 @@ footer .fine{margin-top:14px;opacity:.6;font-size:.72rem;}
   </div>
   <div class="fine">Not affiliated with Roblox Corporation.</div>
 </footer>
+ 
+<div class="modal-backdrop" id="welcome-backdrop">
+  <div class="modal welcome-modal" id="welcome-modal">
+    <button class="modal-close" id="welcome-close">✕</button>
+    <h2 class="welcome-title">Welcome to Clicker Simulator Index</h2>
+    <p class="welcome-text">This site is just a list of all the pets within the game apart from rainbows. There will be an unofficial value list releasing soon based off demand and the currency "Tokens".</p>
+    <button class="welcome-ok" id="welcome-ok">Got it</button>
+  </div>
+</div>
  
 <div class="modal-backdrop" id="modal-backdrop">
   <div class="modal" id="modal">
@@ -542,6 +560,35 @@ sortSelect.addEventListener('change', renderGrid);
  
 renderGrid();
  
+/* ---------- welcome popup (shown once per browser) ---------- */
+(function(){
+  const backdrop = document.getElementById('welcome-backdrop');
+  const closeBtn = document.getElementById('welcome-close');
+  const okBtn = document.getElementById('welcome-ok');
+  const STORAGE_KEY = 'petIndexWelcomeSeen';
+ 
+  const dismiss = ()=>{
+    backdrop.classList.remove('open');
+    document.body.style.overflow = '';
+    try{ localStorage.setItem(STORAGE_KEY, '1'); }catch(e){}
+  };
+ 
+  let alreadySeen = false;
+  try{ alreadySeen = localStorage.getItem(STORAGE_KEY) === '1'; }catch(e){}
+ 
+  if(!alreadySeen){
+    backdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+ 
+  closeBtn.addEventListener('click', dismiss);
+  okBtn.addEventListener('click', dismiss);
+  backdrop.addEventListener('click', (e)=>{ if(e.target===backdrop) dismiss(); });
+  document.addEventListener('keydown', (e)=>{
+    if(e.key==='Escape' && backdrop.classList.contains('open')) dismiss();
+  });
+})();
+ 
 /* ---------- vantablack starfield ---------- */
 (function(){
   const canvas = document.getElementById('stars');
@@ -600,3 +647,4 @@ renderGrid();
 </script>
 </body>
 </html>
+ 
